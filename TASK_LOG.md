@@ -16,5 +16,17 @@
 
 ## 目标清单
 - [x] ~~**目标:** 完成 rustdesk-api 新项目规则基线落地（AGENTS/TASK_LOG/分支规范文档）~~ (创建于: 2026-04-14 17:39:53 | **完成于: 2026-04-14 17:41:29**)
-- [ ] **目标:** 完成 rustdesk-api fork 远端配置（origin 指向你的 fork、upstream 指向 lejianwen/rustdesk-api）并创建 custom/future 分支 (创建于: 2026-04-14 17:41:29)
-- [ ] **目标:** 为 rustdesk-api 与 rustdesk-server 创建自动同步上游 workflow（schedule+手动触发）并完成本地校验 (创建于: 2026-04-14 17:48:09)
+- [x] ~~**目标:** 完成 rustdesk-api fork 远端配置（origin 指向你的 fork、upstream 指向 lejianwen/rustdesk-api）并创建 custom/future 分支~~ (创建于: 2026-04-14 17:41:29 | **完成于: 2026-04-14 17:51:10**)
+  - 改动文件: `.git/config`（远端映射），分支 `custom`、`future`
+  - 归属: fork-only（仓库协作策略）
+  - 同步风险: 低（仅新增分支与远端映射，不改业务代码）
+- [x] ~~**目标:** 为 rustdesk-api 与 rustdesk-server 创建自动同步上游 workflow（schedule+手动触发）并完成本地校验~~ (创建于: 2026-04-14 17:48:09 | **完成于: 2026-04-14 17:51:10**)
+  - 改动文件:
+    - `rustdesk-api/.github/workflows/sync-upstream.yml`
+    - `rustdesk-server/.github/workflows/sync-upstream.yml`
+  - 归属: fork-only（CI 同步能力）
+  - 同步风险: 中（若上游与 fork 分支差异大，自动 merge 可能冲突并失败）
+  - 提交:
+    - `rustdesk-api` `0079caf`
+    - `rustdesk-server` `26552cd`
+- [ ] **目标:** 等待用户提供第一条业务功能需求，在 custom/feature 分支进入功能迭代 (创建于: 2026-04-14 17:51:10)
